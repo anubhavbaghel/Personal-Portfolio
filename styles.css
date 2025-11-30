@@ -1,0 +1,274 @@
+* {
+    font-family: "Google Sans Flex";
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(255, 254, 254);
+    padding: 0px 50px;
+    font-size: 20px;
+    /* border: 2px solid black; */
+    /* border-radius: 60px; */
+}
+
+header>nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+header>nav>a {
+    color: rgb(94, 94, 94);
+    /* background-color: black; */
+    padding: 10px 10px;
+    border-radius: 50px;
+}
+
+header>nav>a:hover {
+    color: black;
+    background-color: rgb(224, 221, 221);
+}
+
+a {
+    text-decoration: none;
+}
+
+.intro {
+    display: flex;
+    height: 400px;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro>article>p {
+    font-size: 30px;
+}
+
+.reveal-text {
+    display: block;
+    width: fit-content;
+    position: relative;
+    margin: 4px;
+}
+
+.gradient-text {
+    color: transparent;
+    font-weight: 700;
+    background: linear-gradient(90deg,
+            #4b90ff,
+            #6852ba,
+            #ff5546,
+            #4b90ff);
+
+    background-size: 200% auto;
+
+    /* Clipping */
+    background-clip: text;
+    font-weight: 700;
+
+    animation-name: move-gradient;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.gradient-text::after {
+    content: "";
+    /* position: absolute; */
+    right: 0;
+    height: 100%;
+    width: 61%;
+
+}
+
+.line-1::after {
+    content: "";
+    position: absolute;
+    right: -5px;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    border-left: 2px solid #ffffff;
+
+    /* animation */
+    animation-name: curtain-wipe, cursor-disappear;
+    animation-duration: 1s;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.7, 0, 0.3, 1), steps(2), ;
+    animation-iteration-count: 1;
+}
+
+.line-2::after {
+    content: "";
+    position: absolute;
+    right: -5px;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    border-left: 4px solid #ffffff;
+
+    /* animation */
+    animation-name: curtain-wipe, cursor-disappear;
+    animation-duration: 1.5s, 1.5s;
+    animation-delay: 1s, 1s;
+    animation-fill-mode: forwards, forwards;
+    animation-timing-function: cubic-bezier(0.7, 0, 0.3, 1), steps(2), linear;
+    animation-iteration-count: 1, 1;
+}
+
+.line-3::after {
+    content: "";
+    position: absolute;
+    right: -5px;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    border-left: 4px solid #ffffff;
+
+    /* animation */
+    animation-name: curtain-wipe, cursor-disappear;
+    animation-duration: 2s, 2s;
+    animation-delay: 2.5s, 2.5s;
+    animation-fill-mode: forwards, forwards;
+    animation-timing-function: cubic-bezier(0.7, 0, 0.3, 1), steps(2), linear;
+    animation-iteration-count: 1, 1;
+}
+
+.line-4::after {
+    content: "";
+    position: absolute;
+    right: -5px;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    border-left: 4px solid #ffffff;
+
+    /* animation */
+    animation-name: curtain-wipe, cursor-disappear;
+    animation-duration: 2s, 2s;
+    animation-delay: 4.5s, 4.5s;
+    animation-fill-mode: forwards, forwards;
+    animation-timing-function: cubic-bezier(0.7, 0, 0.3, 1), steps(2), linear;
+    animation-iteration-count: 1, 1;
+}
+
+.line-5{
+    color: rgb(252, 252, 252);
+    opacity: 0%;
+    font-size: 18px;
+    top: 80px;
+    left: 0px;
+    animation-name: appear;
+    animation-timing-function: linear;
+    animation-delay: 6.5s;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+/* .line-5::after{
+    content: "";
+    position: absolute;
+    right: -5px;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    border-left: 4px solid #ffffff;
+
+    /* animation
+    animation-name: curtain-wipe, cursor-disappear;
+    animation-duration: 2s, 2s;
+    animation-delay: 7.8s, 7.8s;
+    animation-fill-mode: forwards, forwards;
+    animation-timing-function: cubic-bezier(0.7, 0, 0.3, 1), steps(2), linear;
+    animation-iteration-count: 1, 1;
+} */
+
+@keyframes appear{
+    100%{color: #000000; opacity: 100%;}
+}
+
+.skills-marquee {
+    background-color: #f9f9f9;
+    padding: 40px 0;
+    width: 100%;
+}
+
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    mask-image: linear-gradient(to right, transparent, rgb(239, 36, 36) 10%, black 90%, transparent);
+    ;
+}
+
+.marquee-track {
+    display: inline-flex;
+    gap: 50px;
+    animation: scroll-left 40s linear infinite;
+    animation-delay: 6.5s;
+}
+
+.marquee-container:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+.marquee-item {
+    font-size: 24px;
+    font-weight: 550;
+    color: #555;
+}
+
+.marquee-item:hover {
+    transform: scale(1.2);
+    color: #4b90ff;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes move-gradient {
+    0% {
+        background-position: 0% center;
+    }
+
+    100% {
+        background-position: 200% center;
+    }
+}
+
+@keyframes curtain-wipe {
+    from {
+        width: 100%
+    }
+
+    to {
+        width: 0%;
+    }
+}
+
+@keyframes cursor-disappear {
+    0% {
+        border-left: 2px solid black;
+    }
+
+    99% {
+        border-left: 2px solid black;
+    }
+}

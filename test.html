@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinite Marquee</title>
+    <style>
+        /* Import Font (Optional) */
+        @font-face {
+            font-family: 'Google Sans Flex';
+            font-style: normal;
+            font-weight: 400;
+            src: url(https://cdn.jsdelivr.net/fontsource/fonts/google-sans-flex@latest/latin-400-normal.woff2) format('woff2');
+        }
+
+        body {
+            font-family: "Google Sans Flex", sans-serif;
+            margin: 0;
+            padding: 50px;
+            background-color: #fff;
+        }
+
+        /* --- MARQUEE CSS START --- */
+
+        .skills-marquee {
+            /* Background for the whole section */
+            background-color: #f9f9f9;
+            padding: 40px 0;
+            width: 100%;
+        }
+
+        .marquee-container {
+            width: 100%;
+            overflow: hidden; /* Hides items as they move off screen */
+            white-space: nowrap; /* Prevents wrapping to next line */
+            position: relative;
+            
+            /* Gradient Mask: Fades the edges so items don't just "pop" out of existence */
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+
+        .marquee-track {
+            display: flex; /* Using Flexbox for consistent spacing */
+            gap: 50px;     /* Space between items */
+            width: max-content; /* Ensure track calculates width based on content */
+            
+            /* The Animation */
+            animation: scroll-left 20s linear infinite;
+        }
+
+        /* Pause on Hover (Good UX) */
+        .marquee-container:hover .marquee-track {
+            animation-play-state: paused;
+        }
+
+        .marquee-item {
+            font-size: 24px;
+            font-weight: bold;
+            color: #555;
+            user-select: none; 
+        }
+
+        /* Keyframes: Move exactly 50% (half the track) */
+        /* Since we have 4 sets of data, moving 50% means we move past 2 sets. */
+        /* As long as the remaining 2 sets fill the screen, the loop is invisible. */
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        /* --- MARQUEE CSS END --- */
+    </style>
+</head>
+<body>
+
+    <!-- MARQUEE HTML START -->
+    <section class="skills-marquee">
+        <div class="marquee-container">
+            <div class="marquee-track">
+                
+                <!-- We need enough content to cover the screen WIDTH twice. -->
+                <!-- Since the list is short, we repeat it 4 times total. -->
+
+                <!-- GROUP 1 (Sets 1 & 2) -->
+                <div class="marquee-item">HTML5</div>
+                <div class="marquee-item">CSS3</div>
+                <div class="marquee-item">JavaScript</div>
+                <div class="marquee-item">React</div>
+                <div class="marquee-item">Tailwind</div>
+                <div class="marquee-item">Git</div>
+                <div class="marquee-item">Figma</div>
+
+                <div class="marquee-item">HTML5</div>
+                <div class="marquee-item">CSS3</div>
+                <div class="marquee-item">JavaScript</div>
+                <div class="marquee-item">React</div>
+                <div class="marquee-item">Tailwind</div>
+                <div class="marquee-item">Git</div>
+                <div class="marquee-item">Figma</div>
+                
+                <!-- GROUP 2 (Sets 3 & 4 - Duplicate of Group 1) -->
+                <div class="marquee-item">HTML5</div>
+                <div class="marquee-item">CSS3</div>
+                <div class="marquee-item">JavaScript</div>
+                <div class="marquee-item">React</div>
+                <div class="marquee-item">Tailwind</div>
+                <div class="marquee-item">Git</div>
+                <div class="marquee-item">Figma</div>
+
+                <div class="marquee-item">HTML5</div>
+                <div class="marquee-item">CSS3</div>
+                <div class="marquee-item">JavaScript</div>
+                <div class="marquee-item">React</div>
+                <div class="marquee-item">Tailwind</div>
+                <div class="marquee-item">Git</div>
+                <div class="marquee-item">Figma</div>
+
+            </div>
+        </div>
+    </section>
+    <!-- MARQUEE HTML END -->
+
+</body>
+</html>
