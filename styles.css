@@ -1,7 +1,9 @@
 * {
     font-family: "Google Sans Flex";
 }
-
+main{
+    position: relative;
+}
 header {
     display: flex;
     align-items: center;
@@ -38,7 +40,7 @@ a {
 .intro {
     display: flex;
     height: 400px;
-    width: 100vw;
+    width: 100%;
     justify-content: center;
     align-items: center;
 }
@@ -181,64 +183,36 @@ a {
     }
 }
 
-/* .skills-marquee {
-    background-color: #f9f9f9;
-    padding: 40px 0;
-    width: 100%;
-}
-
-.marquee-container {
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    position: relative;
-    mask-image: linear-gradient(to right, transparent, rgb(239, 36, 36) 10%, black 90%, transparent);
-    ;
-}
-
-.marquee-track {
-    display: inline-flex;
-    gap: 50px;
-    animation: scroll-left 40s linear infinite;
-    animation-delay: 6.5s;
-}
-
-.marquee-container:hover .marquee-track {
-    animation-play-state: paused;
-}
-
-.marquee-item {
-    font-size: 24px;
-    font-weight: 550;
-    color: #555;
-}
-
-.marquee-item:hover {
-    transform: scale(1.2);
-    color: #4b90ff;
-} */
-
-/* --- SKILLS CSS START --- */
 
 .skills-section {
+    position: relative;
     background-color: #f9f9f9;
-    padding: 60px 20px;
+    padding: 1px 0px;
     width: 100%;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .skills-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 40px;
-    max-width: 1000px;
-    margin: 0 auto;
+    gap: 30px;
+    max-width: 80%;
+    margin: 0;
+    box-sizing: border-box;
 }
-
+.title{
+    text-align: center;
+    margin: 1%;
+    font-size: 35px;
+}
 .skill-item {
     font-size: 24px;
-    font-weight: bold;
+    font-weight: 500;
     color: #555;
     user-select: none;
     cursor: pointer;
@@ -313,7 +287,7 @@ a {
     /* Hidden initially */
 
     /* Animation: name | duration | easing | fill-mode | DELAY */
-    animation: fade-in-up 1s ease forwards 8s;
+    animation: fade-in-up 1s ease forwards 3s;
 }
 
 /* POP ENTRANCE KEYFRAMES */
