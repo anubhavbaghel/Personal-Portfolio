@@ -454,7 +454,7 @@ footer {
     width: 50%;
     height: 100%;
     flex-direction: column; 
-    gap 10px;
+    gap: 10px;
 }
 
 div>input,
@@ -536,10 +536,6 @@ textarea:focus {
     height: 100%;
     gap: 30px;
     /* background-color: #555; */
-}
-
-#submit{
-    
 }
 
 div>a {
