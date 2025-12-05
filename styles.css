@@ -20,6 +20,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 
@@ -398,9 +399,9 @@ footer {
     margin-top: 50px;
 }
 
-.contact-section{
+.contact-section {
     width: 100%;
-    height:70%;
+    height: 70%;
 }
 
 .contact-container {
@@ -453,7 +454,7 @@ footer {
     font-size: 24px;
     width: 50%;
     height: 100%;
-    flex-direction: column; 
+    flex-direction: column;
     gap: 10px;
 }
 
@@ -469,7 +470,7 @@ textarea {
     box-sizing: border-box;
 }
 
-div>label{
+div>label {
     /* padding: 10px; */
     padding-left: 10px;
 }
@@ -528,6 +529,7 @@ textarea:focus {
 }
 
 .projects-section {
+    padding-top: 10%;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -582,4 +584,102 @@ div>a:hover {
     animation-fill-mode: forwards, forwards;
     animation-timing-function: cubic-bezier(0.7, 0, 0.3, 1), steps(2), linear;
     animation-iteration-count: 1, 1;
+}
+
+@media screen and (max-width: 408px) {
+
+    /* CSS rules here apply ONLY if screen is 768px or smaller */
+    html body {
+        position: relative;
+        height: 100vh;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+    }
+
+    header>nav {
+        gap: 0px;
+    }
+
+    .intro {
+        position: relative;
+        top: -14%;
+        height: 45%;
+    }
+
+    .intro>article {
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+
+    .intro>article>p {
+        font-size: 24px;
+    }
+
+    .skill-item {
+        margin-top: 10px;
+        font-size: 18px;
+    }
+
+    .title {
+        font-size: 30px;
+    }
+
+    .skills-container {
+        gap: 10px;
+    }
+
+    .delayed-text {
+        margin-top: 10px;
+    }
+
+    footer {
+        margin: auto;
+    }
+
+    header>h1 {
+        text-align: center;
+        width: max-content;
+    }
+
+    .projects-section {
+        padding-top: 10%;
+    }
+
+    .projects-section>p {
+        font-size: 26px;
+    }
+
+    .projects-section>div {
+        text-align: center;
+        font-size: 15px;
+    }
+
+    .projects-section>div>a {
+        font-size: 20px;
+    }
+
+    .contact-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .enquiry-form-container {
+        padding: 0%;
+        width: fit-content;
+    }
+
+    .contact-section {
+        width: 90%;
+        height: 100%;
+        padding-top: 25%;
+    }
+
+    .text-stack-container>p{
+        font-size: 18px;
+    }
 }
